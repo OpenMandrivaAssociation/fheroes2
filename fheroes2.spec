@@ -11,6 +11,7 @@ Source2:	%{name}.sh
 Source3:	%{name}.png
 Source4:	%{name}.desktop
 Source5:	%{name}.cfg
+Patch0:		fheroes2-r2693-zlib.patch
 BuildRequires:	gcc-c++
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
@@ -27,6 +28,7 @@ into your /usr/share/games/fheroes2/{maps,data} directories respectively
 
 %prep
 %setup -qn fheroes-src
+%patch0 -p1 -b .zlib
 
 %build
 %make WITH_AI=simple CONFIGURE_FHEROES2_DATA="%{_gamesdatadir}/%{name}/"
@@ -47,9 +49,7 @@ into your /usr/share/games/fheroes2/{maps,data} directories respectively
 %__install -pm 644 %{SOURCE4} %{buildroot}%{_datadir}/applications/%{name}.desktop
 %__install -pm 644 %{SOURCE5} %{buildroot}%{_gamesdatadir}/%{name}/
 
-%find_lang %{name}
-
-%files -f %{name}.lang
+%files
 %defattr(-,root,root)
 %doc AUTHORS changelog.txt COPYING LICENSE README
 %{_gamesbindir}/*
