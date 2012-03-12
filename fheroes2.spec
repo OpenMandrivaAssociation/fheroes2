@@ -1,6 +1,6 @@
-%define rev r2693
+%define rev r2767
 Name:		fheroes2
-Version:	20111109
+Version:	20120301
 Release:	%mkrel 1
 Summary:	Free implementation of Heroes of the Might and Magic II engine
 License:	GPL
@@ -11,7 +11,6 @@ Source2:	%{name}.sh
 Source3:	%{name}.png
 Source4:	%{name}.desktop
 Source5:	%{name}.cfg
-Patch0:		fheroes2-r2693-zlib.patch
 BuildRequires:	gcc-c++
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
@@ -28,12 +27,12 @@ into your /usr/share/games/fheroes2/{maps,data} directories respectively
 
 %prep
 %setup -qn fheroes-src
-%patch0 -p1 -b .zlib
 
 %build
 %make WITH_AI=simple CONFIGURE_FHEROES2_DATA="%{_gamesdatadir}/%{name}/"
 
 %install
+%__rm -rf %{buildroot}
 # let's create directory structure...
 %__mkdir_p %{buildroot}%{_gamesbindir}
 %__mkdir_p %{buildroot}%{_datadir}/applications
@@ -48,6 +47,9 @@ into your /usr/share/games/fheroes2/{maps,data} directories respectively
 %__install -pm 644 %{SOURCE3} %{buildroot}%{_datadir}/pixmaps/%{name}.png
 %__install -pm 644 %{SOURCE4} %{buildroot}%{_datadir}/applications/%{name}.desktop
 %__install -pm 644 %{SOURCE5} %{buildroot}%{_gamesdatadir}/%{name}/
+
+%clean
+%__rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
