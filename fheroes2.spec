@@ -1,6 +1,6 @@
-%define rev r2767
+%define rev r2836
 Name:		fheroes2
-Version:	20120301
+Version:	20120413
 Release:	%mkrel 1
 Summary:	Free implementation of Heroes of the Might and Magic II engine
 License:	GPL
