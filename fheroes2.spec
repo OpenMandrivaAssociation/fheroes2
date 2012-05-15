@@ -1,6 +1,6 @@
-%define rev r2836
+%define rev r2860
 Name:		fheroes2
-Version:	20120413
+Version:	20120514
 Release:	%mkrel 1
 Summary:	Free implementation of Heroes of the Might and Magic II engine
 License:	GPL
@@ -52,7 +52,6 @@ into your /usr/share/games/fheroes2/{maps,data} directories respectively
 %__rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root)
 %doc AUTHORS changelog.txt COPYING LICENSE README
 %{_gamesbindir}/*
 %{_datadir}/pixmaps/%{name}.png
