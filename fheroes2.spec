@@ -11,6 +11,7 @@ Source2:	%{name}.sh
 Source3:	%{name}.png
 Source4:	%{name}.desktop
 Source5:	%{name}.cfg
+Patch0:		fheroes-linkage.patch
 BuildRequires:	gcc-c++
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
@@ -27,6 +28,9 @@ into your /usr/share/games/fheroes2/{maps,data} directories respectively
 
 %prep
 %setup -qn fheroes-src
+%patch0 -p1
+# Fix AI settings recently hardcoded in Makefile (by mistake?)
+%__sed -i s,"WITH_AI=empty","WITH_AI=simple",g Makefile
 
 %build
 %make WITH_AI=simple CONFIGURE_FHEROES2_DATA="%{_gamesdatadir}/%{name}/"
