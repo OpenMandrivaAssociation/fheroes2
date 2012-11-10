@@ -1,0 +1,12 @@
+diff -urN fheroes-src/src/Makefile fheroes-src-patched/src/Makefile
+--- fheroes-src/src/Makefile	2012-04-05 12:37:02.000000000 +1100
++++ fheroes-src-patched/src/Makefile	2012-05-16 03:31:51.000000000 +1100
+@@ -8,7 +8,7 @@
+ 
+ CFLAGS := $(CFLAGS) -Wall -fsigned-char
+ LDFLAGS := $(LDFLAGS)
+-LIBS :=
++LIBS := $(shell pkg-config alsa --libs)
+ 
+ ifdef DEBUG
+ CFLAGS := $(CFLAGS) -O0 -g -pedantic -DWITH_DEBUG
