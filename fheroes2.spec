@@ -1,12 +1,14 @@
-%define rev r2860
+%define debug_package %{nil}
+
+%define rev r3277
 Name:		fheroes2
-Version:	20120514
-Release:	3
+Version:	20150413
+Release:	1
 Summary:	Free implementation of Heroes of the Might and Magic II engine
 License:	GPL
 Group:		Games/Strategy
 Url:		http://sourceforge.net/projects/fheroes2/
-Source:		http://sourceforge.net/projects/fheroes2/files/fheroes2/%{name}-src-%{rev}.tgz
+Source:		http://sourceforge.net/projects/fheroes2/files/fheroes2/%{name}-src-%{rev}.tar.gz
 Source2:	%{name}.sh
 Source3:	%{name}.png
 Source4:	%{name}.desktop
