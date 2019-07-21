@@ -13,6 +13,7 @@ Source3:	%{name}.png
 Source4:	%{name}.desktop
 Source5:	%{name}.cfg
 BuildRequires:	gcc-c++
+BuildRequires:	cmake
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_net-devel
