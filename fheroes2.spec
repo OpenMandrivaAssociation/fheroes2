@@ -1,23 +1,24 @@
 %define debug_package %{nil}
 
 Name:		fheroes2
-Version:	1.1.0
+Version:	0.8
 Release:	1
+Epoch:		1
 Summary:	Free implementation of Heroes of the Might and Magic II engine
 License:	GPL
 Group:		Games/Strategy
-Url:		https://github.com/ciplogic/fheroes2enh
-Source0:	https://github.com/ciplogic/fheroes2enh/archive/1.1.0.tar.gz
+Url:		https://github.com/inhub
+Source0:	https://github.com/ihhub/fheroes2/archive/%{version}.tar.gz
 Source2:	%{name}.sh
 Source3:	%{name}.png
 Source4:	%{name}.desktop
 Source5:	%{name}.cfg
 BuildRequires:	gcc-c++
 BuildRequires:	cmake
-BuildRequires:	SDL_image-devel
-BuildRequires:	SDL_mixer-devel
-BuildRequires:	SDL_net-devel
-BuildRequires:	SDL_ttf-devel
+BuildRequires:	SDL2_image-devel
+BuildRequires:	SDL2_mixer-devel
+BuildRequires:	SDL2_net-devel
+BuildRequires:	SDL2_ttf-devel
 BuildRequires:	freetype-devel
 BuildRequires:	png-devel
 BuildRequires:	zlib-devel
@@ -28,12 +29,11 @@ You need to copy files from data and maps directories from original game
 into your /usr/share/games/fheroes2/{maps,data} directories respectively
 
 %prep
-%setup -qn %{name}enh-%{version}
+%setup -q
 %autopatch -p1
 
 %build
-%cmake
-%make WITH_AI=simple CONFIGURE_FHEROES2_DATA="%{_gamesdatadir}/%{name}/"
+%make WITH_SDL2="ON" CXX=%{__cxx}
 
 %install
 # let's create directory structure...
@@ -43,7 +43,7 @@ into your /usr/share/games/fheroes2/{maps,data} directories respectively
 %__mkdir_p %{buildroot}%{_gamesdatadir}/%{name}/{data,maps}
 
 # and install what we need where we need it to be...
-%__install -pm755 build/%{name} %{buildroot}%{_gamesbindir}/%{name}.bin
+%__install -pm755 %{name} %{buildroot}%{_gamesbindir}/%{name}.bin
 %__install -pm755 %{SOURCE2} %{buildroot}%{_gamesbindir}/%{name}
 %__install -pm 644 %{name}.cfg %{buildroot}%{_gamesdatadir}/%{name}/
 %__install -pm 644 %{name}.key %{buildroot}%{_gamesdatadir}/%{name}/
@@ -52,9 +52,8 @@ into your /usr/share/games/fheroes2/{maps,data} directories respectively
 %__install -pm 644 %{SOURCE5} %{buildroot}%{_gamesdatadir}/%{name}/
 
 %files
-%doc AUTHORS COPYING LICENSE README
+%doc LICENSE
 %{_gamesbindir}/*
 %{_datadir}/pixmaps/%{name}.png
 %{_datadir}/applications/%{name}.desktop
 %{_gamesdatadir}/%{name}
-
