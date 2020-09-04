@@ -8,7 +8,7 @@ Summary:	Free implementation of Heroes of the Might and Magic II engine
 License:	GPL
 Group:		Games/Strategy
 Url:		https://github.com/inhub
-Source0:	https://github.com/ihhub/fheroes2/archive/%{version}.tar.gz
+Source0:	https://github.com/ihhub/fheroes2/archive/%{version}/%{name}-%{version}.tar.gz
 Source2:	%{name}.sh
 Source3:	%{name}.png
 Source4:	%{name}.desktop
