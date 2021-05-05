@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 
 Name:		fheroes2
-Version:	0.9.2
+Version:	0.9.3
 Release:	1
 Epoch:		1
 Summary:	Free implementation of Heroes of the Might and Magic II engine
