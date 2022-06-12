@@ -23,6 +23,7 @@ BuildRequires:	SDL2_ttf-devel
 BuildRequires:	freetype-devel
 BuildRequires:	png-devel
 BuildRequires:	zlib-devel
+BuildRequires: glibc-static-devel
 
 %description
 Free implementation of Heroes of the Might and Magic II engine.
