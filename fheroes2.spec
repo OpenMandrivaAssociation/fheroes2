@@ -3,7 +3,7 @@
 
 Name:		fheroes2
 Version:	1.0.1
-Release:	1
+Release:	2
 Epoch:		1
 Summary:	Free implementation of Heroes of the Might and Magic II engine
 License:	GPL
