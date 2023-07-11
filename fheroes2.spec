@@ -2,7 +2,7 @@
 %define _empty_manifest_terminate_build 0
 
 Name:		fheroes2
-Version:	1.0.4
+Version:	1.0.5
 Release:	1
 Epoch:		1
 Summary:	Free implementation of Heroes of the Might and Magic II engine
