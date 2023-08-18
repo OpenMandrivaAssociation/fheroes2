@@ -57,7 +57,6 @@ into your /usr/share/fheroes2/{maps,data} directories respectively
 %__install -pm 644 %{SOURCE5} %{buildroot}%{_datadir}/%{name}/
 
 %files
-%doc LICENSE
 %doc %{_datadir}/doc/fheroes2/
 %{_bindir}/fheroes2
 %{_datadir}/applications/%{name}.desktop
