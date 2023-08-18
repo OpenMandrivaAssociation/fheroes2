@@ -54,7 +54,7 @@ into your /usr/share/fheroes2/{maps,data} directories respectively
 #__install -pm 644 %{name}.key %{buildroot}%{_gamesdatadir}/%{name}/
 #__install -pm 644 %{SOURCE3} %{buildroot}%{_datadir}/pixmaps/%{name}.png
 #__install -pm 644 %{SOURCE4} %{buildroot}%{_datadir}/applications/%{name}.desktop
-%__install -pm 644 %{SOURCE5} %{buildroot}%{_datadir}/%{name}/
+#__install -pm 644 %{SOURCE5} %{buildroot}%{_datadir}/%{name}/
 
 %files
 %doc %{_datadir}/doc/fheroes2/
