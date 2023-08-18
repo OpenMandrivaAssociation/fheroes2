@@ -58,7 +58,7 @@ into your /usr/share/fheroes2/{maps,data} directories respectively
 
 %files
 %doc LICENSE
-%{_gamesbindir}/*
-%{_datadir}/pixmaps/%{name}.png
+#{_gamesbindir}/*
+#{_datadir}/pixmaps/%{name}.png
 %{_datadir}/applications/%{name}.desktop
-%{_gamesdatadir}/%{name}
+#{_gamesdatadir}/%{name}
