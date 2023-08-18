@@ -49,16 +49,18 @@ into your /usr/share/fheroes2/{maps,data} directories respectively
 
 # and install what we need where we need it to be...
 #__install -pm755 %{name} %{buildroot}%{_gamesbindir}/%{name}.bin
-#__install -pm755 %{SOURCE2} %{buildroot}%{_gamesbindir}/%{name}
+%__install -pm755 %{SOURCE2} %{buildroot}%{_gamesbindir}/%{name}
 #__install -pm 644 %{name}.cfg %{buildroot}%{_gamesdatadir}/%{name}/
 #__install -pm 644 %{name}.key %{buildroot}%{_gamesdatadir}/%{name}/
 #__install -pm 644 %{SOURCE3} %{buildroot}%{_datadir}/pixmaps/%{name}.png
 #__install -pm 644 %{SOURCE4} %{buildroot}%{_datadir}/applications/%{name}.desktop
-#__install -pm 644 %{SOURCE5} %{buildroot}%{_gamesdatadir}/%{name}/
+%__install -pm 644 %{SOURCE5} %{buildroot}%{_gamesdatadir}/%{name}/
 
 %files
 %doc LICENSE
-#{_gamesbindir}/*
-#{_datadir}/pixmaps/%{name}.png
+%doc %{_datadir}/doc/fheroes2/
+%{_bindir}/fheroes2
 %{_datadir}/applications/%{name}.desktop
-#{_gamesdatadir}/%{name}
+%{_datadir}/fheroes2/files/data/resurrection.h2d
+%{_datadir}/metainfo/fheroes2.appdata.xml
+%{_iconsdir}/hicolor/*x*/apps/fheroes2.png
