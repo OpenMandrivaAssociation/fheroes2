@@ -3,7 +3,7 @@
 
 Name:		fheroes2
 Version:	1.0.7
-Release:	1
+Release:	2
 Epoch:		1
 Summary:	Free implementation of Heroes of the Might and Magic II engine
 License:	GPL
@@ -56,7 +56,7 @@ into your /usr/share/fheroes2/{maps,data} directories respectively
 #__install -pm 644 %{SOURCE4} %{buildroot}%{_datadir}/applications/%{name}.desktop
 #__install -pm 644 %{SOURCE5} %{buildroot}%{_datadir}/%{name}/
 mkdir -p %{buildroot}%{_datadir}/%{name}/files/lang
-cp -Rav files/lang/*.mo %{buildroot}%{_datadir}/%{name}/files/lang
+cp -a files/lang/*.mo %{buildroot}%{_datadir}/%name/files/lang/
 
 %files
 %doc %{_datadir}/doc/fheroes2/
