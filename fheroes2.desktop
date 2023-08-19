@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Free Heroes 2
 Comment=Heroes Of Might And Magic 2 Engine
-Exec=/usr/games/fheroes2
+Exec=/usr/bin/fheroes2
 Icon=fheroes2
 StartupNotify=true
 Terminal=false
