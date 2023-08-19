@@ -56,7 +56,7 @@ into your /usr/share/fheroes2/{maps,data} directories respectively
 #__install -pm 644 %{SOURCE4} %{buildroot}%{_datadir}/applications/%{name}.desktop
 #__install -pm 644 %{SOURCE5} %{buildroot}%{_datadir}/%{name}/
 mkdir -p %{buildroot}%{_datadir}/%{name}/files/lang
-cp -a files/lang/*.mo %{buildroot}%{_datadir}/%name/files/lang/
+install -Dm644 files/lang/*.mo -t %{buildroot}%{_datadir}/%{name}/files/lang
 
 %files
 %doc %{_datadir}/doc/fheroes2/
