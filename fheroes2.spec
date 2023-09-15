@@ -25,6 +25,7 @@ BuildRequires:	pkgconfig(freetype2)
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:  glibc-static-devel
+BuildRequires:	locales-extra-charsets
 
 %description
 Free implementation of Heroes of the Might and Magic II engine.
