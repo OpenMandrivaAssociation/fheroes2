@@ -2,8 +2,8 @@
 %define _empty_manifest_terminate_build 0
 
 Name:		fheroes2
-Version:	1.0.7
-Release:	2
+Version:	1.0.8
+Release:	1
 Epoch:		1
 Summary:	Free implementation of Heroes of the Might and Magic II engine
 License:	GPL
@@ -41,22 +41,7 @@ into your /usr/share/fheroes2/{maps,data} directories respectively
 
 %install
 %make_install -C build
-# let's create directory structure...
-#__mkdir_p %{buildroot}%{_gamesbindir}
-#__mkdir_p %{buildroot}%{_datadir}/applications
-#__mkdir_p %{buildroot}%{_datadir}/pixmaps
-#__mkdir_p %{buildroot}%{_gamesdatadir}/%{name}/{data,maps}
 
-# and install what we need where we need it to be...
-#__install -pm755 %{name} %{buildroot}%{_gamesbindir}/%{name}.bin
-#__install -pm755 %{SOURCE2} %{buildroot}%{_bindir}/%{name}
-#__install -pm 644 %{name}.cfg %{buildroot}%{_gamesdatadir}/%{name}/
-#__install -pm 644 %{name}.key %{buildroot}%{_gamesdatadir}/%{name}/
-#__install -pm 644 %{SOURCE3} %{buildroot}%{_datadir}/pixmaps/%{name}.png
-#__install -pm 644 %{SOURCE4} %{buildroot}%{_datadir}/applications/%{name}.desktop
-#__install -pm 644 %{SOURCE5} %{buildroot}%{_datadir}/%{name}/
-#mkdir -p %{buildroot}%{_datadir}/%{name}/files/lang
-#install -Dm644 files/lang/*.mo -t %{buildroot}%{_datadir}/%{name}/files/lang
 
 %files
 %doc %{_datadir}/doc/fheroes2/
