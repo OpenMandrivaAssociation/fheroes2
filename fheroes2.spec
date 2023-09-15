@@ -41,12 +41,18 @@ into your /usr/share/fheroes2/{maps,data} directories respectively
 
 %install
 %make_install -C build
+for i in %{buildroot}%{_datadir}/fheroes2/files/lang/*.mo; do
+	echo "%%lang($(basename $i .mo)) $(echo $i |sed -e 's,^.*%{_datadir},%%{_datadir},')" >>fheroes2.lang
+done
 
-
-%files
+%files -f fheroes2.lang
 %doc %{_datadir}/doc/fheroes2/
 %{_bindir}/fheroes2
 %{_datadir}/applications/%{name}.desktop
+%dir %{_datadir}/fheroes2
+%dir %{_datadir}/fheroes2/files
+%dir %{_datadir}/fheroes2/files/data
+%dir %{_datadir}/fheroes2/files/lang
 %{_datadir}/fheroes2/files/data/resurrection.h2d
 %{_datadir}/metainfo/fheroes2.appdata.xml
 %{_iconsdir}/hicolor/*x*/apps/fheroes2.png
