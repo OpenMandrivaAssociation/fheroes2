@@ -15,6 +15,7 @@ Source3:	%{name}.png
 Source4:	%{name}.desktop
 Source5:	%{name}.cfg
 BuildRequires:	gcc-c++
+BuildRequires:	gettext
 BuildRequires:	cmake
 BuildRequires:  pkgconfig(sdl2)
 BuildRequires:	pkgconfig(SDL2_image)
