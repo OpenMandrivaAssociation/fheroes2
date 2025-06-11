@@ -55,6 +55,7 @@ done
 %dir %{_datadir}/fheroes2/files
 %dir %{_datadir}/fheroes2/files/data
 %dir %{_datadir}/fheroes2/files/lang
+%{_datadir}/fheroes2/maps/
 %{_datadir}/fheroes2/files/data/resurrection.h2d
 %{_datadir}/metainfo/fheroes2.metainfo.xml
 %{_iconsdir}/hicolor/*x*/apps/fheroes2.png
