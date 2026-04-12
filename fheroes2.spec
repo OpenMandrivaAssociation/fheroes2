@@ -14,9 +14,9 @@ Source2:	%{name}.sh
 Source3:	%{name}.png
 Source4:	%{name}.desktop
 Source5:	%{name}.cfg
-BuildRequires:	gcc-c++
 BuildRequires:	gettext
 BuildRequires:	cmake
+BuildRequires:	make
 BuildRequires:  pkgconfig(sdl2)
 BuildRequires:	pkgconfig(SDL2_image)
 BuildRequires:	pkgconfig(SDL2_mixer)
@@ -34,8 +34,7 @@ You need to copy files from data and maps directories from original game
 into your /usr/share/fheroes2/{maps,data} directories respectively
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
 %cmake
